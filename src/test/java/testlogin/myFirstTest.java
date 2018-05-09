@@ -1,17 +1,24 @@
 package testlogin;
 
 
+import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import static sun.net.www.http.HttpClient.New;
+import static testlogin.PaginaTeste.driver;
 
 public class myFirstTest {
 
     @FindBy(id = "email")
     private WebElement email;
-
+   
+    @FindBy(css ="div[class='col l6 m7 s7 valign course-title']")
+    List<WebElement> listCourses;
+    
     @FindBy(id = "password")
     private WebElement password;
 
@@ -44,5 +51,10 @@ public class myFirstTest {
         botaoLogin.click();
 
     }
-
+    
+     public void myCoursesNode() {
+        WebDriver driver2 = (WebDriver) new FirefoxDriver();
+        listCourses.get(0).click();
+      
+    }
 }

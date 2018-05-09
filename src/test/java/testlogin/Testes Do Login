@@ -1,0 +1,45 @@
+    /**
+     * Função que verifica login correto para estudante
+     */
+    @Test
+    public void testLoginCorrectStudent()
+    {
+        myFirstTest pag = PageFactory.initElements(driver, myFirstTest.class);
+        
+        pag.loga();
+        pag.preencheDados("student1@gmail.com", "pass");
+        pag.acessaLoginModal();
+
+        //WebElement ddd;
+        //assertNotNull(ddd);
+    }
+    
+    /**
+     *  
+     * Função para logins incorretos
+    public void testLoginIncorrect()
+    {
+        myFirstTest pag = PageFactory.initElements(driver, myFirstTest.class);
+        
+        pag.loga();
+        pag.preencheDados("student1@gmail.com", "passIncorret");
+        pag.acessaLoginModal();
+
+        //WebElement ddd;
+        //assertNotNull(ddd);
+    }
+   
+    /**
+     * Função que verifica o teste corretamente de usuário e senha para professores
+     */
+    @Test
+    public void testLoginCorrectTeacher()
+    {
+        myFirstTest pag = PageFactory.initElements(driver, myFirstTest.class);
+        
+        pag.loga();
+        pag.preencheDados("teacher@gmail.com", "Pass12345");
+        pag.acessaLoginModal();
+
+        //assertNotNull(ddd);
+    }
