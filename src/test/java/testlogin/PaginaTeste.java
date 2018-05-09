@@ -16,14 +16,14 @@ public class PaginaTeste {
     @BeforeClass
     public static void configura()
     {
-        System.setProperty("webdriver.gecko.driver", "/home/cassioreis/Downloads/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "/home/cassio/Downloads/geckodriver");
         driver = (WebDriver) new FirefoxDriver();
         driver.get("https://atlantis.isti.cnr.it:5000/");
     }
     
     /**
      * Função que acessa os cursos
-     */
+     *
     @Test
     public void testMyCourses()
     {
@@ -32,5 +32,15 @@ public class PaginaTeste {
         pag.preencheDados("teacher@gmail.com", "Pass12345");
         pag.acessaLoginModal();
         pag.myCoursesNode();
+    }
+    * 
+    */
+    
+    public void testNewUser(){
+        
+        myFirstTest pag = PageFactory.initElements(driver, myFirstTest.class);
+        pag.loga();
+        pag.newUser("teacher@gmail.com", "Pass12345","Pass12345");
+        
     }
 }

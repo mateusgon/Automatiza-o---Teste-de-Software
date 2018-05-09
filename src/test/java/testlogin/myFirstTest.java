@@ -21,6 +21,9 @@ public class myFirstTest {
     
     @FindBy(id = "password")
     private WebElement password;
+     
+    @FindBy(id = "confirmPassword")
+    private WebElement confirmPassword;
 
     @FindBy(id = "signUpButton")
     private WebElement botao;
@@ -34,7 +37,7 @@ public class myFirstTest {
         this.driver = driver;
     }
 
-    public myFirstTest preencheDados(String nome, String sobrenome) {
+    public myFirstTest preencheDadosLogin(String nome, String sobrenome) {
         this.email.sendKeys(nome);
         this.password.sendKeys(sobrenome);
         PageFactory.initElements(driver, this);
@@ -43,19 +46,24 @@ public class myFirstTest {
 
     public void loga() {
         driver.findElement(By.linkText("Log in")).click();
-
-        //    botao.click();
+    }
+    
+     public void newUser(String email, String pass, String passCofirm) {
+        driver.findElement(By.linkText("SIGN UP")).click();
+        this.email.sendKeys(email);
+        this.password.sendKeys(pass);
+        this.confirmPassword.sendKeys(passCofirm);
+        PageFactory.initElements(driver, this);
     }
 
     public void acessaLoginModal() {
         botaoLogin.click();
 
     }
-    
-     public void myCoursesNode() {
+    public void myCoursesNode() {
         WebDriver driver2 = (WebDriver) new FirefoxDriver();
         driver2.close();
         listCourses.get(0).click();
-      
+
     }
 }
