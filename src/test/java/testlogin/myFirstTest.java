@@ -54,6 +54,7 @@ public class myFirstTest {
     
      public void myCoursesNode() {
         WebDriver driver2 = (WebDriver) new FirefoxDriver();
+        driver2.close();
         listCourses.get(0).click();
       
     }
