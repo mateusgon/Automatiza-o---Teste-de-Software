@@ -23,6 +23,11 @@ public class TesteCursosAux {
     @FindBy(css ="div[class='col l6 m7 s7 valign course-title']")
     List<WebElement> listCourses;
     
+   
+    @FindBy(css ="i[class='material-icons course-put-icon']")
+    List<WebElement> listIconsPencils;
+    
+    
     @FindBy (id = "edit-course-info")
     private WebElement editInfCurso;
     
@@ -43,6 +48,23 @@ public class TesteCursosAux {
 
     @FindBy(id = "signUpButton")
     private WebElement botao;
+    
+    @FindBy(id = "input-put-course-name")
+    private WebElement inputAlterarNome;
+    
+       
+    @FindBy(id = "submit-put-course-btn")
+    private WebElement btnAlterarNomeConfirmar;
+  
+
+    @FindBy(css ="input[class='filled-in']")
+    private List<WebElement> comboMarcaExclusao;
+    
+       
+    @FindBy(id = "delete-course-btn")
+    private WebElement btnDeleteCurso;
+  
+    
 
     @FindBy(id = "log-in-btn")
     WebElement botaoLogin;
@@ -114,7 +136,7 @@ public class TesteCursosAux {
         driver2 = (WebDriver) new FirefoxDriver();
         driver2.close();
         botaoCurso.click();
-        nomeCurso.sendKeys("´´~~");
+        nomeCurso.sendKeys("ï¿½ï¿½~~");
         confirmaCurso.click();
     }
     
@@ -127,7 +149,7 @@ public class TesteCursosAux {
         driver3.close();
         abaEdicao.click();
         editInfCurso.click();
-        nomeClasse.sendKeys("Esta é uma inclusao");
+        nomeClasse.sendKeys("Esta ï¿½ uma inclusao");
         BotaoAdicionarAlterarInfo.click(); 
     }
     
@@ -140,7 +162,34 @@ public class TesteCursosAux {
         driver3.close();
         abaEdicao.click();
         editInfCurso.click();
-        nomeClasse.sendKeys("Esta é uma alteração");
+        nomeClasse.clear();
+        nomeClasse.sendKeys("Esta ï¿½ uma alteraï¿½ï¿½o");
         BotaoAdicionarAlterarInfo.click();
+    }
+    public void editNomeCurso()
+    {
+        driver2 = (WebDriver) new FirefoxDriver();
+        driver2.close();
+        
+        listIconsPencils.get(0).click();
+        inputAlterarNome.clear();
+        inputAlterarNome.sendKeys("Esta ï¿½ uma alteraï¿½ï¿½o");
+        btnAlterarNomeConfirmar.click();
+        
+    }
+    
+      public void excluirCurso()
+    {
+        driver2 = (WebDriver) new FirefoxDriver();
+        driver2.close();
+        listIconsPencils.get(0).click();
+        driver3 = (WebDriver) new FirefoxDriver();
+        driver3.close();
+      
+      
+        comboMarcaExclusao.get(0).submit();
+        comboMarcaExclusao.get(0).click();
+        btnDeleteCurso.click();
+        
     }
 }

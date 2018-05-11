@@ -14,7 +14,7 @@ public class TesteCursos {
     @BeforeClass
     public static void configura()
     {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Mateus G\\Desktop\\geckodriver.exe");
+          System.setProperty("webdriver.gecko.driver", "/home/ice/Downloads/geckodriver");
         driver = (WebDriver) new FirefoxDriver();
         driver.get("https://atlantis.isti.cnr.it:5000/");
     }
@@ -24,15 +24,17 @@ public class TesteCursos {
     {
         TesteCursosAux pag = PageFactory.initElements(driver, TesteCursosAux.class);
         pag.loga();
-        pag.preencheDados("teacher@gmail.com", "Pass12345");
+        pag.preencheDados("teacher@gmail.com", "pass");
         pag.acessaLoginModal();
-      // >>> Responsável por criar um curso <<< pag.criaCurso(); 
-      // >>> Responsável por criar dois cursos com nomes iguais <<<  pag.criarCursoNomesIguais();
-      // >>> Responsável por criar curso com nome vazio, somente com números e com acentos <<<
+      // >>> Responsï¿½vel por criar um curso <<< pag.criaCurso(); 
+      // >>> Responsï¿½vel por criar dois cursos com nomes iguais <<<  pag.criarCursoNomesIguais();
+      // >>> Responsï¿½vel por criaexcluirCursor curso com nome vazio, somente com nï¿½meros e com acentos <<<
       // pag.criarCursoInvalidoSemTexto(); 
       // pag.criarCursoInvalidoSomenteNumeros();
       // pag.criarCursoInvalidoSomenteAcento();
-      // >>> Responsável por adicionar informações referentes ao curso <<< pag.adicionarInformacaoCurso();
-      // >>> Responsável por editar informações referentes ao curso <<< pag.editarInformacaoCurso();
+      // >>> Responsï¿½vel por adicionar informaï¿½ï¿½es referentes ao curso <<< pag.adicionarInformacaoCurso();
+      // >>> Responsï¿½vel por editar informaï¿½ï¿½es referentes ao curso <<< pag.editarInformacaoCurso();
+      //pag.editNomeCurso();
+      pag.excluirCurso();
     }
 }
