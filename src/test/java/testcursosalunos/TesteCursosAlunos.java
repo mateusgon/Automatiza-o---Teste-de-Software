@@ -14,7 +14,7 @@ public class TesteCursosAlunos {
     @BeforeClass
     public static void configura()
     {
-        System.setProperty("webdriver.gecko.driver", "/home/ice/Downloads/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Mateus G\\Desktop\\geckodriver.exe");
         driver = (WebDriver) new FirefoxDriver();
         driver.get("https://atlantis.isti.cnr.it:5000/");
     }

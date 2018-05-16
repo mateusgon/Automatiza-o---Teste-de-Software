@@ -14,7 +14,7 @@ public class TesteCursos {
     @BeforeClass
     public static void configura()
     {
-          System.setProperty("webdriver.gecko.driver", "/home/ice/Downloads/geckodriver");
+          System.setProperty("webdriver.gecko.driver", "C:\\Users\\Mateus G\\Desktop\\geckodriver.exe");
         driver = (WebDriver) new FirefoxDriver();
         driver.get("https://atlantis.isti.cnr.it:5000/");
     }
@@ -35,6 +35,6 @@ public class TesteCursos {
       // >>> Respons�vel por adicionar informa��es referentes ao curso <<< pag.adicionarInformacaoCurso();
       // >>> Respons�vel por editar informa��es referentes ao curso <<< pag.editarInformacaoCurso();
       //pag.editNomeCurso();
-      pag.excluirCurso();
+      //pag.excluirCurso();
     }
 }
