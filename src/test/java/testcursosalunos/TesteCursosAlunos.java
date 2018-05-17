@@ -14,7 +14,7 @@ public class TesteCursosAlunos {
     @BeforeClass
     public static void configura()
     {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Mateus G\\Desktop\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "/home/mateusgon/Downloads/geckodriver");
         driver = (WebDriver) new FirefoxDriver();
         driver.get("https://atlantis.isti.cnr.it:5000/");
     }
@@ -24,7 +24,7 @@ public class TesteCursosAlunos {
     {
         TesteCursosAlunosAux pag = PageFactory.initElements(driver, TesteCursosAlunosAux.class);
         pag.loga();
-        pag.preencheDados("teacher@gmail.com", "Pass12345");
+        pag.preencheDados("teacher@gmail.com", "pass");
         pag.acessaLoginModal();
         // >>> Adiciona aluno, caso ele n�o esteja no curso <<< pag.adicionarAluno();
         // >>> N�o dever� adicionar alunos, adicionar aluno n�o cadastrado <<< pag.adicionarAlunoNaoCadastrado();

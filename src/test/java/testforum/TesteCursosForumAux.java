@@ -4,11 +4,24 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TesteCursosForumAux {    
-    @FindBy(id = "md-tab-label-0-4")
+public class TesteCursosForumAux { 
+    @FindBy(id = "post-modal-btn")
+    private WebElement botaoForum;
+    
+    @FindBy(id = "input-post-title")
+    private WebElement tituloForum;
+    
+    @FindBy(id = "input-post-comment")
+    private WebElement textoForum;
+    
+    @FindBy(id = "add-entry-icon")
+    private WebElement criarForum;
+    
+    @FindBy(id = "md-tab-label-0-2")
     private WebElement abaEdicao;
     
     @FindBy(id = "md-tab-label-1-1")
@@ -51,5 +64,90 @@ public class TesteCursosForumAux {
     public void acessaLoginModal() {
         botaoLogin.click();
     }
-
+    
+    public void adicionarForum()
+    {
+        driver2 = (WebDriver) new FirefoxDriver();
+        driver2.close();
+        listCourses.get(0).click();
+        driver3 = (WebDriver) new FirefoxDriver();
+        driver3.close();
+        abaEdicao.click();
+        criarForum.click();
+        tituloForum.sendKeys("Este é um título");
+        textoForum.sendKeys("Este é um texto");
+        botaoForum.click();
+    }
+    
+    public void adicionarForumRepetido()
+    {
+        driver2 = (WebDriver) new FirefoxDriver();
+        driver2.close();
+        listCourses.get(0).click();
+        driver3 = (WebDriver) new FirefoxDriver();
+        driver3.close();
+        abaEdicao.click();
+        criarForum.click();
+        tituloForum.sendKeys("Este é um título");
+        textoForum.sendKeys("Este é um texto");
+        botaoForum.click();
+        criarForum.click();
+        tituloForum.sendKeys("Este é um título");
+        textoForum.sendKeys("Este é um texto");
+        botaoForum.click();
+        criarForum.click();
+        tituloForum.sendKeys("Este é um título");
+        textoForum.sendKeys("Este é um texto");
+        botaoForum.click();
+    }
+    
+    public void adicionarForumSemTitulo()
+    {
+        driver2 = (WebDriver) new FirefoxDriver();
+        driver2.close();
+        listCourses.get(0).click();
+        driver3 = (WebDriver) new FirefoxDriver();
+        driver3.close();
+        abaEdicao.click();
+        criarForum.click();
+        tituloForum.sendKeys("");
+        textoForum.sendKeys("Este é um texto");
+        botaoForum.click();
+    }
+    
+    public void adicionarForumSemDescricao()
+    {
+        driver2 = (WebDriver) new FirefoxDriver();
+        driver2.close();
+        listCourses.get(0).click();
+        driver3 = (WebDriver) new FirefoxDriver();
+        driver3.close();
+        abaEdicao.click();
+        criarForum.click();
+        tituloForum.sendKeys("Este é um título");
+        textoForum.sendKeys("");
+        botaoForum.click();
+    }
+    
+    public void adicionarForumCaracteresInvalidos()
+    {
+        driver2 = (WebDriver) new FirefoxDriver();
+        driver2.close();
+        listCourses.get(0).click();
+        driver3 = (WebDriver) new FirefoxDriver();
+        driver3.close();
+        abaEdicao.click();
+        criarForum.click();
+        tituloForum.sendKeys("''''");
+        textoForum.sendKeys("Este é um texto");
+        botaoForum.click();
+        criarForum.click();
+        tituloForum.sendKeys("~~~~~");
+        textoForum.sendKeys("Este é um texto");
+        botaoForum.click();
+        criarForum.click();
+        tituloForum.sendKeys("@@@@@");
+        textoForum.sendKeys("Este é um texto");
+        botaoForum.click();
+    }
 }
